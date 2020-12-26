@@ -5,3 +5,10 @@ C:\Users\kozlovvo\source\repos\1\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Al
 C:\Users\kozlovvo\source\repos\1\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.csproj.CoreCompileInputs.cache
 C:\Users\kozlovvo\source\repos\1\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.exe
 C:\Users\kozlovvo\source\repos\1\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.pdb
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\bin\Debug\Lesson03-Alg.exe.config
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\bin\Debug\Lesson03-Alg.exe
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\bin\Debug\Lesson03-Alg.pdb
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.csprojAssemblyReference.cache
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.csproj.CoreCompileInputs.cache
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.exe
+C:\Users\Family\Desktop\Учёба\GeekBrains\Алгоритмы и структуры данных. Базовый курс\Готовые задания\Lesson03-Alg\Lesson03-Alg\obj\Debug\Lesson03-Alg.pdb
