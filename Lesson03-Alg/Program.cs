@@ -24,7 +24,7 @@ namespace Lesson03_Alg
         }
         #endregion
         #region Попробовать оптимизировать пузырьковую сортировку. Сравнить количество операций сравнения оптимизированной и не оптимизированной программы.Написать функции сортировки, которые возвращают количество операций
-        /*/// <summary>
+        /// <summary>
         /// Улучшенная пузырьковая сортировка
         /// </summary>
         /// <param name="arr"> Массив на вход</param>
@@ -44,10 +44,9 @@ namespace Lesson03_Alg
                         MySwap(arr, j,j+1);
                     }
                 }
-                Console.WriteLine($"Итерация №: {i + 1}");
+                count++;
                 if(st)
                     break;
-                count++;
             }
             return count;
         }
@@ -66,11 +65,10 @@ namespace Lesson03_Alg
                 {
                     if (arr[j] < arr[i]) MySwap(arr,i,j);
                 }
-                Console.WriteLine($"Итерация №: {i + 1}");
                 count++;
             }
             return count;
-        }*/
+        }
         #endregion
         #region *Реализовать шейкерную сортировку.
         /// <summary>
@@ -93,78 +91,40 @@ namespace Lesson03_Alg
                         MySwap(arr, i-1,i);                    
                 }
                 right--;
-                Console.WriteLine($"Итерация №: {left - 1}");
+                //Console.WriteLine($"Итерация №: {left - 1}");
             }
         }
-        #endregion
-        class BubbleSort
-        {
-            public BubbleSort()
-            {
-
-            }
-            public static int BubbleSortV1(int [] arr, int size)
-            {
-                int count = 0;
-                for(int i = 0; i < size; i++)
-                {
-                    for(int j = i+1; j < size; j++)
-                    {
-                        if (arr[j] < arr[i])
-                            MySwap(arr, i, j);
-                    }
-                    count++;
-                    Console.WriteLine($"Итерация №: {count}");
-                }
-                return count;
-            }
-            public static int BubbleSortV2(int[] arr, int size)
-            {
-                int count = 0;
-                for (int i = 0; i < size; i++)
-                {
-                    bool st = true;
-                    for (int j = 0; j < size - 1 - i; j++)
-                    {
-                        if (arr[j] > arr[j + 1])
-                        {
-                            st = false;
-                            MySwap(arr, j, j + 1);
-                        }
-                    }
-                    Console.WriteLine($"Итерация №: {i + 1}");
-                    if (st)
-                        break;
-                    count++;                    
-                }
-                return count;
-            }
-        }
+        #endregion        
         static void Main(string[] args)
         {
-            int[] arr = new int [10];
+            Console.Write("Введите разсерность массива: ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int [size];
+            int[] arra = new int[size];
+            int[] arrb = new int[size];
             Random rnd = new Random();
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < size; i++)
             {
                 arr[i] = rnd.Next(1, 100);
-                Console.Write($"{arr[i]} ");
-            }
-            int[] a = arr;
-            int[] b = arr;
+                arra[i] = rnd.Next(1, 100);
+                arrb[i] = rnd.Next(1, 100);
+            }            
             Console.WriteLine();
-            MySortShaekr(arr, 10);
-            Console.WriteLine("Массив после сортировки");
-            for (int i = 0; i < 10; i++)
+            MySortShaekr(arr, size);
+            int a = MySortBoul(arra, size);
+            int b = MySortBoulV2(arrb, size);
+            Console.WriteLine("Массив после сортировки Шейкерным методом:");
+            for (int i = 0; i < size; i++)
                 Console.Write($"{arr[i]} ");
-            int ar = BubbleSort.BubbleSortV1(a, 10);
-            int br = BubbleSort.BubbleSortV1(b, 10);
-            Console.WriteLine("\nМассив после сортировки обычным пузырьком");
-            for (int i = 0; i < 10; i++)
-                Console.Write($"{a[i]} ");
-            Console.WriteLine("\nМассив после сортировки улучшенным пузырьком");
-            for (int i = 0; i < 10; i++)
-                Console.Write($"{b[i]} ");
-
+            Console.WriteLine("\nМассив после сортировки пузырьком:");
+            for (int i = 0; i < size; i++)
+                Console.Write($"{arra[i]} ");
+            Console.WriteLine($"\nКоличество итераций для сортировки обычным пузырьком: {a}");
+            Console.WriteLine("\nМассив после сортировки улучшенным пузырьком:");
+            for (int i = 0; i < size; i++)
+                Console.Write($"{arrb[i]} ");
+            Console.WriteLine($"\nКоличество итераций для сортировки улучшенным пузырьком: {b}");
+            Console.WriteLine($"На сколько итераций отличается Улучшенный Пузырёк от Обычного: {a - b}");
             Console.ReadKey();
         }
     }
