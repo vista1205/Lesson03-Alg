@@ -94,7 +94,39 @@ namespace Lesson03_Alg
                 //Console.WriteLine($"Итерация №: {left - 1}");
             }
         }
-        #endregion        
+        #endregion
+        #region Реализовать бинарный алгоритм поиска в виде функции, которой передается отсортированный массив.Функция возвращает индекс найденного элемента или -1, если элемент не найден.
+        /// <summary>
+        ///  Бинарный алгоритм поиска
+        /// </summary>
+        /// <param name="arr"> массив на вход для поиска</param>
+        /// <param name="i"> Число для поиска</param>
+        /// <returns> Возвращает индекс искомого элемента или -1, если такого элемента нет</returns>
+        static int  MyBinAlg(int [] arr, int i)
+        {
+            MySortShaekr(arr, arr.Length);
+            int left = 0;
+            int right = arr.Length - 1;
+            int search = -1;
+            while (left <= right)
+            {
+                int mid = (left + right) / 2;
+                if (i == arr[mid])
+                {
+                    search = mid;
+                    break;
+                }
+                if (i < arr[mid])
+                    right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+            if (search == -1)
+                return -1;
+            else
+                return search;
+        }
+        #endregion
         static void Main(string[] args)
         {
             Console.Write("Введите разсерность массива: ");
@@ -102,17 +134,19 @@ namespace Lesson03_Alg
             int[] arr = new int [size];
             int[] arra = new int[size];
             int[] arrb = new int[size];
+            int[] arrc = new int[size];
             Random rnd = new Random();
             for(int i = 0; i < size; i++)
             {
                 arr[i] = rnd.Next(1, 100);
                 arra[i] = rnd.Next(1, 100);
                 arrb[i] = rnd.Next(1, 100);
+                arrc[i] = rnd.Next(1, 100);
             }            
             Console.WriteLine();
             MySortShaekr(arr, size);
             int a = MySortBoul(arra, size);
-            int b = MySortBoulV2(arrb, size);
+            int b = MySortBoulV2(arrb, size);            
             Console.WriteLine("Массив после сортировки Шейкерным методом:");
             for (int i = 0; i < size; i++)
                 Console.Write($"{arr[i]} ");
@@ -125,6 +159,9 @@ namespace Lesson03_Alg
                 Console.Write($"{arrb[i]} ");
             Console.WriteLine($"\nКоличество итераций для сортировки улучшенным пузырьком: {b}");
             Console.WriteLine($"На сколько итераций отличается Улучшенный Пузырёк от Обычного: {a - b}");
+            Console.Write("Введите число для поиска: ");
+            int sea = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(MyBinAlg(arrc, sea));
             Console.ReadKey();
         }
     }
